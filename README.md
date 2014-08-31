@@ -28,6 +28,8 @@ console.log( isUppercase( 'Hello' ) );
 // Returns false
 ```
 
+Note: this module validates that a `value` is a `string`. 
+
 
 ## Examples
 
