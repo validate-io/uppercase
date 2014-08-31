@@ -5,7 +5,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	lib = require( './../lib' );
+	isUppercase = require( './../lib' );
 
 
 // VARIABLES //
@@ -20,9 +20,30 @@ describe( 'validate.io-uppercase', function tests() {
 	'use strict';
 
 	it( 'should export a function', function test() {
-		expect( lib ).to.be.a( 'function' );
+		expect( isUppercase ).to.be.a( 'function' );
 	});
 
-	it( 'should do something' );
+	it( 'should positively validate', function test() {
+		assert.ok( isUppercase( 'HELLO' ) );
+	});
+
+	it( 'should negatively validate', function test() {
+		var values = [
+				5,
+				[],
+				true,
+				function(){},
+				null,
+				{},
+				NaN,
+				'Hello',
+				'hello',
+				undefined
+			];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			assert.ok( !isUppercase( values[i] ) );
+		}
+	});
 
 });
