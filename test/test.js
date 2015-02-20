@@ -1,3 +1,5 @@
+/* global require, describe, it */
+'use strict';
 
 // MODULES //
 
@@ -17,7 +19,6 @@ var expect = chai.expect,
 // TESTS //
 
 describe( 'validate.io-uppercase', function tests() {
-	'use strict';
 
 	it( 'should export a function', function test() {
 		expect( isUppercase ).to.be.a( 'function' );
@@ -25,21 +26,22 @@ describe( 'validate.io-uppercase', function tests() {
 
 	it( 'should positively validate', function test() {
 		assert.ok( isUppercase( 'HELLO' ) );
+		assert.ok( isUppercase( new String( 'HELLO' ) ) );
 	});
 
 	it( 'should negatively validate', function test() {
 		var values = [
-				5,
-				[],
-				true,
-				function(){},
-				null,
-				{},
-				NaN,
-				'Hello',
-				'hello',
-				undefined
-			];
+			5,
+			[],
+			true,
+			function(){},
+			null,
+			{},
+			NaN,
+			'Hello',
+			'hello',
+			undefined
+		];
 
 		for ( var i = 0; i < values.length; i++ ) {
 			assert.ok( !isUppercase( values[i] ) );
