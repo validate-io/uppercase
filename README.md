@@ -22,7 +22,7 @@ var isUppercase = require( 'validate.io-uppercase' );
 
 #### isUppercase( value )
 
-Validate is a `value` is an uppercase `string`.
+Validates if a `value` is an uppercase `string`.
 
 ``` javascript
 var value = 'BEEP';
