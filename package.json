@@ -29,7 +29,11 @@
     "validator",
     "valid",
     "string",
-    "uppercase"
+    "uppercase",
+    "is",
+    "type",
+    "check",
+    "isuppercase"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/uppercase/issues"
